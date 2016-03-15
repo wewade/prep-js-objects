@@ -3,6 +3,18 @@ Objects are very important and powerful. Below we will start with creating simpl
 
 Objects let us store data in much more meaningful and helpful ways, with property names. Each Property of an Object can hold **any** data-type: *Booleans*, *Numbers*, *Strings*, an *Array*, an *Object*, or a *Function*.
 
+## Getting Started
+1. **Fork** this repository
+1. **Clone** this repo from your personal GitHub account.
+    - Copy the SSH address on the page
+    - Run the command: `$ git clone [YOUR SSH ADDRESS]` to clone this repo onto your computer.
+1. Navigate into the exercise folder, e.g. `$ cd prep-js-objects`.
+1. Run the command: `$ npm install` to get all other files needed to run the tests.
+1. Your work will be entered into the file named `objects.js`
+1. Run your tests with the command `$ npm test`.
+  - You will need to enter this command each time you want to run the tests.
+1. Make all your tests pass :)
+
 ## Caveat
 Below you may see the term **key-value pair**, this is just another way of referring to an object's **property name** (key) and its **value**.
 
@@ -12,11 +24,6 @@ Also, other the instructions may get vague as you progress through this exercise
 
 ## Reference
 [Js-Basics Slides - Objects Section](http://slides.com/sgnl/js-basics/#/8)
-
-## Getting Started
-1. Fork this repository and clone it from your personal GitHub Account
-2. In the Terminal type ```cd Objects```
-5. Your work will be one in the file named: `objects.js`
 
 # Exercises
 ## Plain object and adding properties
