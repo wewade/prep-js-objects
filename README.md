@@ -88,7 +88,7 @@ Invoke your function and pass in your object, store the result to a variable nam
 Go ahead and create some more objects and pass them to this function. Have fun with it.
 
 ## Print sum function and add as new key-value
-Declare a new function and a single parameter which will be the object from the challenge just above. Within this function you are to print to the screen a message of the operation performed. For Example:
+Declare a new function named printObj and a single parameter which will be the object from the challenge just above. Within this function you are to print to the screen a message of the operation performed. For Example:
 
 ```javascript
 // if this object was passed into your function: { a: 10, b:67, result: 77 }

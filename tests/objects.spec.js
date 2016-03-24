@@ -116,8 +116,9 @@ Test('prep-js-objects', suite => {
     }
     t.notEquals(sandbox.printProcessedOrders, void 0, 'printProcessedOrders function exists.');
     t.equals(typeof (sandbox.printProcessedOrders(sandbox.arrayOfObjects)), 'string', 'printProcessedOrders function returns a string.');
-    t.equals(sandbox.printProcessedOrders(sandbox.arrayOfObjects),
-        '===== id:  0 purchase date:  Monday Jan 25 2015 2:01 PM purchase total:  279.38 ===== id:  1 purchase date:  Monday Jan 27 2015 11:31 AM purchase total:  79.80 ===== id:  2 purchase date:  Monday Feb 1 2015 7:56 AM purchase total:  15.62 =====', 'printProcessedOrders function is successful');
+
+    // t.equals(sandbox.printProcessedOrders(sandbox.arrayOfObjects),
+    //     '===== id:  0 purchase date:  Monday Jan 25 2015 2:01 PM purchase total:  279.38 ===== id:  1 purchase date:  Monday Jan 27 2015 11:31 AM purchase total:  79.80 ===== id:  2 purchase date:  Monday Feb 1 2015 7:56 AM purchase total:  15.62 =====', 'printProcessedOrders function is successful');
 
     t.end();
   });
@@ -125,8 +126,8 @@ Test('prep-js-objects', suite => {
   Test('Addition with an object', t => {
     t.ok(sandbox.sumObj, 'sumObj variable exists.');
     t.equals(typeof (sandbox.sumObj), 'object', 'sumObj variable is an object.');
-    t.equals(typeof (sandbox.sumObj.a), 'number', 'sumObj.a variable is an number.');
-    t.equals(typeof (sandbox.sumObj.b), 'number', 'sumObj.b variable is an number.');
+    t.equals(typeof (sandbox.sumObj.a), 'number', 'sumObj.a is an number.');
+    t.equals(typeof (sandbox.sumObj.b), 'number', 'sumObj.b is an number.');
     if (!sandbox.objectAddition) {
       t.fail('objectAddition function is not defined.');
       return t.end();
@@ -137,19 +138,18 @@ Test('prep-js-objects', suite => {
     t.end();
   });
 
-  /*
-      # Print sum function and add as new key-value
-          Declare a new function and a single parameter which will be the object from the challenge just above. Within this function you are to print to the screen a message of the operation performed. For Example:
+  Test('Print sum function and add as new key-value', t => {
+    if (!sandbox.printObj) {
+      t.fail('printObj function is not defined.');
+      return t.end();
+    }
+    t.notEquals(sandbox.printObj, void 0, 'printObj function exists.');
+    t.equals(Object.keys(sandbox.sumObj).length, 4, 'Successfully saved the result of objectAddition to output');
+    t.equals(sandbox.sumObj.output, (sandbox.sumObj.a) + ' + ' + (sandbox.sumObj.b) + ' = ' + (sandbox.sumObj.result), 'printObj function returns the correct output of a + b.');
+    t.equals(typeof (sandbox.objectAddition(sandbox.sumObj)), 'object', 'objectAddition function returns an object.');
 
-          // if this object was passed into your function:
-          { a: 10, b:67, result: 77 }
-          // it should print a message saying
-          '10 + 67 = 77'
-
-          Before returning this object, add a new property to it named `output` and set it to be the message that was printed out.
-
-          Invoke this function and pass in your object. Further test by changing the values of the object being passed in or **create more** objects and invoke your function multiple times.
-   */
+    t.end();
+  });
 
   suite.end()
 })
