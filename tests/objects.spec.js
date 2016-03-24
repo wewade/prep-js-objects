@@ -23,7 +23,6 @@ Test('prep-js-objects', suite => {
     t.equals(typeof (sandbox.plainBox.size), 'number', 'plainBox.size is a number');
     t.equals((sandbox.plainBox.size) <= 20 && (sandbox.plainBox.size) >= 0, true, 'plainBox.size is a number between 0 and 20');
     t.equals(Array.isArray(sandbox.plainBox.contents), true, 'plainBox.contents is an array');
-    t.deepEqual(sandbox.plainBox.contents, [], 'plainBox.contents is an empty array');
     t.end();
   });
 
@@ -148,6 +147,20 @@ Test('prep-js-objects', suite => {
     t.equals(sandbox.sumObj.output, (sandbox.sumObj.a) + ' + ' + (sandbox.sumObj.b) + ' = ' + (sandbox.sumObj.result), 'printObj function returns the correct output of a + b.');
     t.equals(typeof (sandbox.objectAddition(sandbox.sumObj)), 'object', 'objectAddition function returns an object.');
 
+    t.end();
+  });
+
+  Test('Putting stuff in `plainBox`', t => {
+    if (!sandbox.putInPlainBox) {
+      t.fail('putInPlainBox function is not defined.');
+      return t.end();
+    }
+    t.notEquals(sandbox.putInPlainBox, void 0, 'putInPlainBox function exists.');
+    t.equals(typeof (sandbox.putInPlainBox({contents:[]})), 'object', 'putInPlainBox function returns an object.');
+    t.equals(Array.isArray(sandbox.plainBox.contents), true, 'plainBox.contents is an array');
+    t.equals((sandbox.plainBox.contents).length, 10, 'plainBox.contents is an array of length 10');
+    t.ok(sandbox.plainBoxResult, 'plainBoxResult variable exists.');
+    t.equals(typeof (sandbox.plainBoxResult), 'object', 'plainBoxResult variable is an object.');
     t.end();
   });
 

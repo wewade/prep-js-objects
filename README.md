@@ -101,9 +101,9 @@ Before returning this object, add a new property to it named `output` and set it
 Invoke this function and pass in your object. Further test by changing the values of the object being passed in or **create more** objects and invoke your function multiple times.
 
 ## Putting stuff in `plainBox`
-Declare a function and a single parameter which will be an object. Within this function, write a FOR loop that adds **10** random number values to the array referenced at the `contents` property of the object being passed in. This function will return the object.
+Declare a function named putInPlainBox and a single parameter which will be an object. Within this function, write a FOR loop that adds **10** random number values to the array referenced at the `contents` property of the object being passed in. This function will return the object.
 
-Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable and use `console.log` to inspect your results.
+Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
 
 ## Detecting transmission
 Declare a function and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.

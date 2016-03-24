@@ -188,10 +188,19 @@ printObj(sumObj);
 
 /*
     # Putting stuff in `plainBox`
-        Declare a function and a single parameter which will be an object. Within this function, write a FOR loop that adds **10** random number values to the array referenced at the `contents` property of the object being passed in. This function will return the object.
+        Declare a function named putInPlainBox and a single parameter which will be an object. Within this function, write a FOR loop that adds **10** random number values to the array referenced at the `contents` property of the object being passed in. This function will return the object.
 
-        Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable and use `console.log` to inspect your results.
+        Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
  */
+
+function putInPlainBox(obj) {
+  for (var i = 0; i < 10; i++) {
+    (obj.contents).push(i)
+  }
+  return obj;
+}
+
+var plainBoxResult = putInPlainBox(plainBox);
 
 /*
     # Detecting transmission
