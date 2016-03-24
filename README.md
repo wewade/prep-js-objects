@@ -53,12 +53,12 @@ Next, declare a function named `buildPerson` and then define three parameters. T
 
  The function will return the first parameter.
 
-Finally, invoke your new function while passing in the `plainPerson` object and additional agrument values, then store the return value. Use `console.log` three times to print the entire object, just the value at `name`, and just the value at `age`.
+Finally, invoke your new function while passing in the `plainPerson` object and additional agrument values, then store the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just the value at `name`, and just the value at `age`.
 
 ## Display values of objects that are inside an array
 Declare a new variable named `arrayOfObjects` and set it to be [this array of objects](https://gist.github.com/sgnl/958adf99007329d2e4ff).
 
-Declare a new function named `printProcessedOrders`and set one parameter called `orders`. Within this function you will use `console.log` to print order details to the page.
+Declare a new function named `printProcessedOrders`and set one parameter called `orders`. Within this function you will return a string that prints the order details to the page in the following format.
 
 Example output:
 ```
@@ -74,14 +74,16 @@ purchase total:  79.80
 id:  2
 purchase date:  Monday Feb 1 2015 7:56 AM
 purchase total:  15.62
+=====
+...
 ```
 
 ## Addition with an object
-Declare a new variable and set it to be a new object with the properties `a`, `b`, and `result`.
+Declare a new variable named sumObj and set it to be a new object with the properties `a`, `b`, and `result`. Properties 'a' and 'b' will be set to a number and result will be 'undefined.'
 
-Declare a new function. Declare the first parameter, which will be an object. Within this function, you will access the values stored `a` and `b` of the object being passed in. Add the these values and store the sum to this object's `result` property. This function will return the object.
+Declare a new function named objectAddition. Declare the first parameter, which will be an object. Within this function, you will access the values stored `a` and `b` of the object being passed in. Add the these values and store the sum to this object's `result` property. This function will return the object.
 
-Invoke your function and pass in your object, store the result to a variable and use `console.log` to inspect your results.
+Invoke your function and pass in your object, store the result to a variable named sumObjResultand use `console.log` to inspect your results.
 
 Go ahead and create some more objects and pass them to this function. Have fun with it.
 
