@@ -106,11 +106,12 @@ Declare a function named putInPlainBox and a single parameter which will be an o
 Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
 
 ## Detecting transmission
-Declare a function and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
+    Declare a function named detectingTranmission and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
 
-If `automaticTransmission` is true then print a message saying so. Also, provide an appropriate message for when the its false.
+    If `automaticTransmission` is true then print a message saying so. Also, provide an appropriate message for when the its false.
 
-Invoke your function and pass in your object, store the result to a variable and use `console.log` to inspect your results.
+    Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
+
 
 ## Who's driving this thing?!
 As you may have noticed that the `stockCar` doesn't have a driver!

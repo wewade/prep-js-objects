@@ -156,11 +156,34 @@ Test('prep-js-objects', suite => {
       return t.end();
     }
     t.notEquals(sandbox.putInPlainBox, void 0, 'putInPlainBox function exists.');
-    t.equals(typeof (sandbox.putInPlainBox({contents:[]})), 'object', 'putInPlainBox function returns an object.');
+    t.equals(typeof (sandbox.putInPlainBox({ contents :[] })), 'object', 'putInPlainBox function returns an object.');
     t.equals(Array.isArray(sandbox.plainBox.contents), true, 'plainBox.contents is an array');
     t.equals((sandbox.plainBox.contents).length, 10, 'plainBox.contents is an array of length 10');
     t.ok(sandbox.plainBoxResult, 'plainBoxResult variable exists.');
     t.equals(typeof (sandbox.plainBoxResult), 'object', 'plainBoxResult variable is an object.');
+    t.end();
+  });
+
+  /*
+    # Detecting transmission
+        Declare a function named detectingTranmission and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
+
+        If `automaticTransmission` is true then print a message saying so. Also, provide an appropriate message for when the its false.
+
+        Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
+ */
+
+  Test('Detecting transmission', t => {
+    if (!sandbox.detectingTranmission) {
+      t.fail('detectingTranmission function is not defined.');
+      return t.end();
+    }
+    t.notEquals(sandbox.detectingTranmission, void 0, 'detectingTranmission function exists.');
+    t.equals(typeof (sandbox.detectingTranmission({ automaticTransmission : true })), 'string', 'detectingTranmission function returns a string.');
+    t.equals(sandbox.detectingTranmission({ automaticTransmission : true }) !== sandbox.detectingTranmission({ automaticTransmission : false }), true, 'detectingTranmission function returns different strings depending on whether the stockcar has automatic tranmission');
+    t.ok(sandbox.isAutomaticTransmission, 'isAutomaticTransmission variable exists.');
+    t.equals(typeof (sandbox.isAutomaticTransmission), 'string', 'isAutomaticTransmission variable is a string.');
+
     t.end();
   });
 
