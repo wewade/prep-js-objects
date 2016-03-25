@@ -15,6 +15,10 @@ Script.runInNewContext(sandbox);
 
 Test('prep-js-objects', suite => {
   Test('Plain object and adding properties', t => {
+    if (!sandbox.plainBox) {
+      t.fail('plainBox is not defined.');
+      return t.end();
+    }
     t.ok(sandbox.plainBox, 'plainBox variable exists.');
     t.equals(typeof (sandbox.plainBox), 'object', 'plainBox variable is an object.');
     t.ok(sandbox.plainBox, {}, 'plainBox variable is an empty object.');
@@ -27,6 +31,10 @@ Test('prep-js-objects', suite => {
   });
 
   Test('An object with properties declared line by line', t => {
+    if (!sandbox.stockCar) {
+      t.fail('stockCar is not defined.');
+      return t.end();
+    }
     t.ok(sandbox.stockCar, 'stockCar variable exists.');
     t.equals(typeof (sandbox.stockCar), 'object', 'stockCar variable is an object.');
     t.equals(Object.keys(sandbox.stockCar).length, 5, 'stockCar variable is an object with 5 properties');
@@ -54,6 +62,10 @@ Test('prep-js-objects', suite => {
   });
 
   Test('Display values of objects that are inside an array', t => {
+    if (!sandbox.arrayOfObjects) {
+      t.fail('arrayOfObjects function is not defined.');
+      return t.end();
+    }
     t.ok(sandbox.arrayOfObjects, 'arrayOfObjects variable exists.');
     t.equals(Array.isArray(sandbox.arrayOfObjects), true, 'arrayOfObjects is an array');
     t.deepEqual(sandbox.arrayOfObjects, [
