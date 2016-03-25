@@ -208,39 +208,6 @@ Test('prep-js-objects', suite => {
     t.end();
   });
 
-  /*
-      # Final Boss
-      The Dev League instructors want to ride your whip!
-
-          Declare a variable named `passengerList` and set it to be `['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor']`
-
-          Declare a variable named `passengerAges` and set it to be `[19, 12, 21, 22, 16, 9, 19, 20, 15]`
-
-          Declare a function named `addPassengers` with three parameters. The first will be a **car** and the second will be an array of **names** and the third will be an array of **ages**. The names and ages are in sequence, e.g. "Jon" is "19", "Jason" is "12".
-
-          In the end you will return the **car** but within the function...
-
-          You will have to populate the `passengers` array on the **car** object with proper objects that represent a person. Currently you have two arrays, one which contains names and another which contains ages.
-
-          You should iterate through the names and ages, pass the values to your `buildPerson` function to build person objects (remember that this function returns a new object). Don't forget that this function actually takes **three** arguments, how will you handle that? (you should not have to change your function).
-
-      Example of a loaded Car:
-
-      # Display passengers
-          Delcare a function and set one parameter which will be a **car**. This function should print out each passenger's name and age one line at a time.
-
-      example output:
-          'Jon, age 19, is riding dirty!'
-          'Jason, age 12, is riding dirty!'
-          'Tony, age 21, is riding dirty!'
-          'Joe, age 22, is riding dirty!'
-          'Jesse, age 16, is riding dirty!'
-          'Nigel, age 9, is riding dirty!'
-          'Kelli, age 19, is riding dirty!'
-          'Marifel, age 19, is riding dirty!'
-          'Victor, age 19, is riding dirty!'
-   */
-
   Test('Final Boss', t => {
     Test('The Dev League instructors want to ride your whip!', t => {
       var passengerTestList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
@@ -273,6 +240,5 @@ Test('prep-js-objects', suite => {
 
     t.end();
   });
-
   suite.end()
 })
