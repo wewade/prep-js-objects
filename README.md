@@ -116,9 +116,9 @@ Invoke your function and pass in your object (which should be `plainBox`), store
 ## Who's driving this thing?!
 As you may have noticed that the `stockCar` doesn't have a driver!
 
-Declare a function with two parameters. The first parameter will be an object with represents a **car**, the other will be a **person**. Within this function, set the `driver` value of the **stockCar** to the second parameter being passed into your function.
+Declare a function named addDriver with two parameters. The first parameter will be an object with represents a **car**, the other will be a **person**. Within this function, set the `driver` value of the **stockCar** to the second parameter being passed into your function.
 
-Invoke your function and pass in your objects, store the result, and inspect your results. Consider using `plainPerson` as your driver.
+Invoke your function and pass in your objects, store the result to a variable named stockCarWithDriver, and inspect your results. Consider using `plainPerson` as your driver.
 
 # Final Boss
 ![final-boss](https://lolapug.files.wordpress.com/2012/10/dsc_0400_2.jpg)
@@ -130,7 +130,7 @@ Declare a variable named `passengerList` and set it to be `['Jon', 'Jason', 'Ton
 
 Declare a variable named `passengerAges` and set it to be `[19, 12, 21, 22, 16, 9, 19, 20, 15]`
 
-Declare a function and three parameters. The first will be a **car** and the second will be an array of **names** and the third will be an array of **ages**. The names and ages are in sequence, e.g. "Jon" is "19", "Jason" is "12".
+Declare a function named `addPassengers` with three parameters. The first will be a **car** and the second will be an array of **names** and the third will be an array of **ages**. The names and ages are in sequence, e.g. "Jon" is "19", "Jason" is "12".
 
 In the end you will return the **car** but within the function...
 
@@ -143,7 +143,7 @@ Example of a loaded Car:
 ![loaded-car](https://s3.amazonaws.com/uploads.hipchat.com/54891/1222770/yTlG8e60WXeKgLb/upload.png)
 
 ## Display passengers
-Delcare a function and set one parameter which will be a **car**. This function should print out each passenger's name and age one line at a time.
+Delcare a function named displayPassengers and set one parameter which will be a **car**. This function should print out each passenger's name and age one line at a time.
 
 example output:
 ```

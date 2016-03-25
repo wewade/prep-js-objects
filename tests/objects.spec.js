@@ -35,17 +35,16 @@ Test('prep-js-objects', suite => {
     t.equals((sandbox.stockCar.year) <= 2015 && (sandbox.stockCar.year) >= 2000, true, 'stockCar.year is a number between 2000 and less than 2016');
     t.equals(typeof (sandbox.stockCar.automaticTransmission), 'boolean', 'stockCar.automaticTransmission is a boolean');
     t.equals(Array.isArray(sandbox.stockCar.passengers), true, 'stockCar.passengers is an array');
-    t.deepEqual(sandbox.stockCar.passengers, [], 'stockCar.passengers is an empty array');
     t.end();
   });
 
   Test('Add new property inside a function', t => {
-    t.ok(sandbox.plainPerson, 'plainPerson variable exists.');
-    t.equals(typeof (sandbox.plainPerson), 'object', 'plainPerson variable is an object.');
     if (!sandbox.buildPerson) {
       t.fail('buildPerson function is not defined.');
       return t.end();
     }
+    t.ok(sandbox.plainPerson, 'plainPerson variable exists.');
+    t.equals(typeof (sandbox.plainPerson), 'object', 'plainPerson variable is an object.');
     t.notEquals(sandbox.buildPerson, void 0, 'buildPerson function exists.');
     t.deepEqual(sandbox.buildPerson(sandbox.plainPerson, 'Joe', 25), { name : 'Joe', age :25 }, 'buildPerson function returns a person.');
     t.equals(typeof (sandbox.buildPerson(sandbox.plainPerson, 'Joe', 25)), 'object', 'buildPerson function returns an object.');
@@ -123,14 +122,14 @@ Test('prep-js-objects', suite => {
   });
 
   Test('Addition with an object', t => {
-    t.ok(sandbox.sumObj, 'sumObj variable exists.');
-    t.equals(typeof (sandbox.sumObj), 'object', 'sumObj variable is an object.');
-    t.equals(typeof (sandbox.sumObj.a), 'number', 'sumObj.a is an number.');
-    t.equals(typeof (sandbox.sumObj.b), 'number', 'sumObj.b is an number.');
     if (!sandbox.objectAddition) {
       t.fail('objectAddition function is not defined.');
       return t.end();
     }
+    t.ok(sandbox.sumObj, 'sumObj variable exists.');
+    t.equals(typeof (sandbox.sumObj), 'object', 'sumObj variable is an object.');
+    t.equals(typeof (sandbox.sumObj.a), 'number', 'sumObj.a is an number.');
+    t.equals(typeof (sandbox.sumObj.b), 'number', 'sumObj.b is an number.');
     t.notEquals(sandbox.objectAddition, void 0, 'objectAddition function exists.');
     t.deepEqual(sandbox.sumObj.result, sandbox.sumObj.a + sandbox.sumObj.b, 'objectAddition function returns the result of a + b.');
     t.equals(typeof (sandbox.objectAddition(sandbox.sumObj)), 'object', 'objectAddition function returns an object.');
@@ -164,15 +163,6 @@ Test('prep-js-objects', suite => {
     t.end();
   });
 
-  /*
-    # Detecting transmission
-        Declare a function named detectingTranmission and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
-
-        If `automaticTransmission` is true then print a message saying so. Also, provide an appropriate message for when the its false.
-
-        Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
- */
-
   Test('Detecting transmission', t => {
     if (!sandbox.detectingTranmission) {
       t.fail('detectingTranmission function is not defined.');
@@ -183,6 +173,91 @@ Test('prep-js-objects', suite => {
     t.equals(sandbox.detectingTranmission({ automaticTransmission : true }) !== sandbox.detectingTranmission({ automaticTransmission : false }), true, 'detectingTranmission function returns different strings depending on whether the stockcar has automatic tranmission');
     t.ok(sandbox.isAutomaticTransmission, 'isAutomaticTransmission variable exists.');
     t.equals(typeof (sandbox.isAutomaticTransmission), 'string', 'isAutomaticTransmission variable is a string.');
+    t.end();
+  });
+
+  Test('Who`s driving this thing?!', t => {
+    if (!sandbox.addDriver) {
+      t.fail('addDriver function is not defined.');
+      return t.end();
+    }
+    t.notEquals(sandbox.addDriver, void 0, 'addDriver function exists.');
+    t.ok(sandbox.stockCar.driver, 'stockCar.driver variable exists.');
+    t.equals(typeof (sandbox.addDriver(sandbox.completePerson, sandbox.stockCar)), 'object', 'addDriver function returns an object.');
+    t.equals(typeof (sandbox.stockCar.driver), 'object', 'stockCar.driver returns an object.');
+    if (!sandbox.stockCar.driver.name) {
+      t.fail('driver is not defined.');
+      return t.end();
+    }
+    t.equals(typeof (sandbox.stockCar.driver.name), 'string', 'Stock Car driver has a name');
+    t.equals(typeof (sandbox.stockCar.driver.age), 'number', 'Stock Car driver has an age');
+    t.ok(sandbox.stockCarWithDriver, 'stockCarWithDriver variable exists.');
+    t.equals(typeof (sandbox.stockCarWithDriver), 'object', 'stockCarWithDriver variable is an object.');
+    t.end();
+  });
+
+  /*
+      # Final Boss
+      The Dev League instructors want to ride your whip!
+
+          Declare a variable named `passengerList` and set it to be `['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor']`
+
+          Declare a variable named `passengerAges` and set it to be `[19, 12, 21, 22, 16, 9, 19, 20, 15]`
+
+          Declare a function named `addPassengers` with three parameters. The first will be a **car** and the second will be an array of **names** and the third will be an array of **ages**. The names and ages are in sequence, e.g. "Jon" is "19", "Jason" is "12".
+
+          In the end you will return the **car** but within the function...
+
+          You will have to populate the `passengers` array on the **car** object with proper objects that represent a person. Currently you have two arrays, one which contains names and another which contains ages.
+
+          You should iterate through the names and ages, pass the values to your `buildPerson` function to build person objects (remember that this function returns a new object). Don't forget that this function actually takes **three** arguments, how will you handle that? (you should not have to change your function).
+
+      Example of a loaded Car:
+
+      # Display passengers
+          Delcare a function and set one parameter which will be a **car**. This function should print out each passenger's name and age one line at a time.
+
+      example output:
+          'Jon, age 19, is riding dirty!'
+          'Jason, age 12, is riding dirty!'
+          'Tony, age 21, is riding dirty!'
+          'Joe, age 22, is riding dirty!'
+          'Jesse, age 16, is riding dirty!'
+          'Nigel, age 9, is riding dirty!'
+          'Kelli, age 19, is riding dirty!'
+          'Marifel, age 19, is riding dirty!'
+          'Victor, age 19, is riding dirty!'
+   */
+
+  Test('Final Boss', t => {
+    Test('The Dev League instructors want to ride your whip!', t => {
+      var passengerTestList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+      var passengerTestAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
+      var stockCarCopy = sandbox.stockCar;
+      if (!sandbox.addPassengers) {
+        t.fail('addPassengers function is not defined.');
+        return t.end();
+      }
+      t.ok(sandbox.passengerList, 'passengerList variable exists.');
+      t.equals(Array.isArray(sandbox.passengerList), true, 'passengerList is an array');
+      t.deepEqual(sandbox.passengerList, passengerTestList, 'passengerList is the correct array');
+      t.ok(sandbox.passengerAges, 'passengerAges variable exists.');
+      t.equals(Array.isArray(sandbox.passengerAges), true, 'passengerAges is an array');
+      t.deepEqual(sandbox.passengerAges, passengerTestAges, 'passengerAges is the correct array');
+      t.notEquals(sandbox.addPassengers, void 0, 'addPassengers function exists.');
+      t.equals(typeof (sandbox.addPassengers(stockCarCopy, passengerTestList, passengerTestAges)), 'object', 'addPassengers function returns an object.');
+      t.equals(Array.isArray(sandbox.stockCar.passengers), true, 'stockCar.passengers is an array');
+      t.end();
+    });
+
+    Test('Display passengers', t => {
+      if (!sandbox.displayPassengers) {
+        t.fail('displayPassengers function is not defined.');
+        return t.end();
+      }
+      t.notEquals(sandbox.displayPassengers, void 0, 'displayPassengers function exists.');
+      t.end();
+    });
 
     t.end();
   });
