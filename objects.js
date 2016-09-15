@@ -6,7 +6,15 @@
             - Add a property named `size` and set it to a number value between `0` and `20`.
             - Add a property named `contents` and set it to be an empty array.
  */
-
+            var plainBox ={
+                color: "red",
+                size: 10,
+                contents: []
+                            
+            };
+                console.log(plainBox.color);
+                console.log(plainBox.size);
+                console.log(plainBox.contents);
 
 /*
     # An object with properties declared line by line
