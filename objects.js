@@ -165,10 +165,6 @@
             printProcessedOrders(arrayOfObjects);
 
 
-
-
-
-
 /*
     # Addition with an object
         Declare a new variable named sumObj and set it to be a new object with the properties `a`, `b`, and `result`. Properties 'a' and 'b' will be set to a number and result will be 'undefined.'
@@ -179,6 +175,19 @@
 
         Go ahead and create some more objects and pass them to this function. Have fun with it.
 */
+        var sumObj ={};
+        sumObj.a = 7;
+        sumObj.b = 5;
+        sumObj.result = undefined;
+
+        function objectAddition(jct){
+            jct.result = jct.a + jct.b;
+                          
+          return  jct;
+        }
+        objectAddition(sumObj);
+        var sumObjResult =(objectAddition(sumObj));
+        console.log(sumObjResult);
 
 
 /*
@@ -194,6 +203,39 @@
 
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or **create more** objects and invoke your function multiple times.
  */
+            function printObj(jct){
+                jct.output = jct.a + "+"  + jct.b  + "= " + jct.result;
+
+                 return jct.output;
+
+            }
+            
+            console.log(printObj(sumObj));
+
+
+                
+
+
+
+            
+
+
+
+
+
+
+            
+
+
+
+
+            
+
+
+
+
+
+
 
 
 /*
