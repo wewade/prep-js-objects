@@ -224,7 +224,7 @@
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
  */
             function putInplainBox(obj){
-                for (var i= 0; i<10; i++ ){
+                for (var i= 0; i<10; i++ ){    ///skipped this one!
 
 
 
@@ -252,7 +252,6 @@
                     return "it's manual brah";
                 }
 
-
             }
                 var isAutomaticTransmission = (detectingTranmission(stockCar));
                 console.log(isAutomaticTransmission);
@@ -265,8 +264,14 @@
 
         Invoke your function and pass in your objects, store the result to a variable named stockCarWithDriver, and inspect your results. Consider using `plainPerson` as your driver.
  */
+        function addDriver (car, person){
+            car.driver = person;
+            return car;
 
-
+        }
+        addDriver(stockCar, plainPerson);
+        var stockCarWithDriver =(addDriver(stockCar , plainPerson));
+        console.log(stockCarWithDriver);
 /*
     # Final Boss
     The Dev League instructors want to ride your whip!
