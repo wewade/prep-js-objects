@@ -213,28 +213,7 @@
             console.log(printObj(sumObj));
 
 
-                
-
-
-
-            
-
-
-
-
-
-
-            
-
-
-
-
-            
-
-
-
-
-
+                 
 
 
 
@@ -244,7 +223,17 @@
 
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
  */
+            function putInplainBox(obj){
+                for (var i= 0; i<10; i++ ){
 
+
+
+                }
+
+
+
+
+            }
 
 /*
     # Detecting transmission
@@ -253,8 +242,20 @@
         If `automaticTransmission` is true then print a message saying so. Also, provide an appropriate message for when the its false.
 
         Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
- */
+ */         function detectingTranmission(obj){
+                if(obj.automaticTransmission === true){
 
+                    return "it's automatic brah";
+
+                }else{
+
+                    return "it's manual brah";
+                }
+
+
+            }
+                var isAutomaticTransmission = (detectingTranmission(stockCar));
+                console.log(isAutomaticTransmission);
 
 /*
     # Who's driving this thing?!
