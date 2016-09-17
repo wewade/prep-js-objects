@@ -16,7 +16,7 @@
                 console.log(plainBox.size);
                 console.log(plainBox.contents);
 
-
+                                                                                        //adding property to empty object is different than adding property when object is created?
 /*
     # An object with properties declared line by line
 
@@ -150,12 +150,12 @@
              ];
          
         function printProcessedOrders(orders){
-
+                                                                              // how to determine this needs for loop?
         for (var i = 0; i < orders.length; i++) {
 
             console.log("====");   //  "====" dividing marks              
-            console.log("id" + i); // "id" iteration through loop
-            console.log("purchase date:" + orders[i].date); // extract order date from array
+            console.log("id" + i); // "id" iteration through loop                               
+            console.log("purchase date:" + orders[i].date); // extract order date from arrayOfObjects      /Explain this problem/
             console.log("purchase total:" + orders[i].total); // extract total from array
 
             
@@ -224,40 +224,42 @@
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
  */
             function putInplainBox(obj){
-                for (var i= 0; i<10; i++ ){    ///skipped this one!
+                for (var i= 0; i<10; i++ ){
 
+             var  RandomNumber =Math.floor( Math.random() * 10) ;
+                    obj.contents.push(RandomNumber);
 
-
-                }
-
-
+                                         
+                  }
+                     return obj;
 
 
             }
-
-/*
+              var plainBoxResult =putInplainBox(plainBox);
+                console.log(plainBoxResult);
+/*                  
     # Detecting transmission
         Declare a function named detectingTranmission and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
 
         If `automaticTransmission` is true then print a message saying so. Also, provide an appropriate message for when the its false.
 
         Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
- */         function detectingTranmission(obj){
-                if(obj.automaticTransmission === true){
+ */        function detectingTranmission(obj){
+            if(obj.automaticTransmission === true){
 
-                    return "it's automatic brah";
+                return "automatic trans brah";
+            }else{
 
-                }else{
-
-                    return "it's manual brah";
-                }
+                return "manual trans brah";
+            }
 
             }
-                var isAutomaticTransmission = (detectingTranmission(stockCar));
-                console.log(isAutomaticTransmission);
-
+              detectingTranmission(stockCar);
+              var  isAutomaticTransmission=(detectingTranmission(stockCar));
+              console.log(isAutomaticTransmission);
 /*
-    # Who's driving this thing?!
+
+         Who's driving this thing?!
         As you may have noticed that the `stockCar` doesn't have a driver!
 
         Declare a function named addDriver with two parameters. The first parameter will be an object with represents a **car**, the other will be a **person**. Within this function, set the `driver` value of the **stockCar** to the second parameter being passed into your function.
@@ -304,4 +306,21 @@
         'Marifel, age 19, is riding dirty!'
         'Victor, age 19, is riding dirty!'
  */
+            var passengerList =['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+            var passengerAges =[19, 12, 21, 22, 16, 9, 19, 20, 15];
 
+            function addPassengers(car , names, ages){
+                for (var i = 0; i < names.length; i++) {
+                    var newPlainPerson ={};
+                    car.passenger.push(buildPerson(newPlainPerson,  names[i] , ages[i]));
+
+
+                 
+                }
+
+                       return car;
+                
+            }
+
+              addPassengers(stockCar , passengerList , passengerAges);
+              console.log(addPassengers(stockCar , passengerList , passengerAges));
